@@ -3,6 +3,8 @@
 
 namespace phmLabs\ConsoleSpeechDecorator;
 
+use phmLabs\ConsoleSpeechDecorator\Synthesizer\Say;
+use phmLabs\ConsoleSpeechDecorator\Synthesizer\Synthesizer;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -11,10 +13,15 @@ class SpeechDecorator implements OutputInterface
     private $output;
     private $synthesizer;
 
-    public function __construct(OutputInterface $output, Synthesizer $synthesizer)
+    public function __construct(OutputInterface $output, Synthesizer $synthesizer = null)
     {
         $this->output = $output;
-        $this->synthesizer = $synthesizer;
+
+        if ($synthesizer) {
+            $this->synthesizer = $synthesizer;
+        } else {
+            $this->synthesizer = new Say();
+        }
     }
 
     public function write($messages, $newline = false, $options = 0)

@@ -1,6 +1,6 @@
 <?php
 
-namespace phmLabs\ConsoleSpeechDecorator;
+namespace phmLabs\ConsoleSpeechDecorator\Synthesizer;
 
 interface Synthesizer
 {
