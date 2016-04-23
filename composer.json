@@ -1,0 +1,9 @@
+{
+  "name": "phmlabs/consolespeechdecorator",
+  "description": "",
+  "autoload": {
+    "psr-4": {
+      "phmLabs\\ConsoleSpeechDecorator\\": "src/"
+    }
+  }
+}
